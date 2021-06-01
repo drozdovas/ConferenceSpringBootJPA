@@ -3,6 +3,7 @@ target/
 logs/*
 .mvn/*
 .data/*
+.idea/
 !**/src/main/**
 !**/src/test/**
 
