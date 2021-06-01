@@ -3,7 +3,7 @@ package com.drozdovas.conference.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="CONF_NAMES")
+@Table(name="CONF_USERS")
 public class User {
 
     @Id
