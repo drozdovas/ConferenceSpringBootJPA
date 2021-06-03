@@ -1,8 +1,11 @@
 package com.drozdovas.conference.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
-@Entity(name="CONF_COURSES")
+@Table(name="CONF_COURSES")
+@Entity
 public class Course {
 
     @Id
@@ -15,6 +18,7 @@ public class Course {
     @Column(name = "DESCRIPTION")
     private String description;
 
+    @JsonBackReference
     @ManyToOne
     private Registration registration;
 
