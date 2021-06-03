@@ -1,18 +1,23 @@
 package com.drozdovas.conference.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "CONF_REGISTRATIONS")
 public class Registration {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotEmpty
+    private String name;
+
+    @OneToMany(mappedBy = "registration", cascade = CascadeType.ALL)
+    private List<Course> courses =  new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -22,14 +27,19 @@ public class Registration {
         this.id = id;
     }
 
-    @NotEmpty
-    private String name;
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
     }
 }
