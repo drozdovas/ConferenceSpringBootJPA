@@ -4,8 +4,8 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 
-@Table(name="CONF_COURSES")
 @Entity
+@Table(name="CONF_COURSES")
 public class Course {
 
     @Id

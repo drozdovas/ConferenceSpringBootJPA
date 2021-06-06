@@ -22,14 +22,14 @@ public class RegistrationRepositoryImpl implements RegistrationRepository {
 
     @Override
     public List<Registration> findAll() {
-        String jpql = "select r from com.drozdovas.conference.model.Registration r";
+        String jpql = "select r from Registration r";
         return entityManager.createQuery(jpql).getResultList();
     }
 
     @Override
     public List<RegistrationReportDto> findAllReports() {
         String jpql = "select new com.drozdovas.conference.dto.RegistrationReportDto (r.name, c.name, c.description) " +
-                "from com.drozdovas.conference.model.Registration r, com.drozdovas.conference.model.Course c " +
+                "from Registration r, Course c " +
                 "where r.id = c.registration.id";
         return entityManager.createQuery(jpql).getResultList();
     }

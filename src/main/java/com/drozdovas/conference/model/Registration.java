@@ -7,8 +7,8 @@ import javax.validation.constraints.NotEmpty;
 import java.util.ArrayList;
 import java.util.List;
 
-@Table(name = "CONF_REGISTRATIONS")
 @Entity
+@Table(name = "CONF_REGISTRATIONS")
 public class Registration {
 
     @Id
