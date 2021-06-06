@@ -32,7 +32,7 @@ public class RegistrationController {
 
     @GetMapping("registration-reports")
     public @ResponseBody List<RegistrationReportDto> getRegistrationReports() {
-        return registrationService.getAllReports();
+        return registrationService.getGeneralReport();
     }
 
     @PostMapping("registration")

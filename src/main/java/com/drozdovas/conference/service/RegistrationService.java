@@ -12,5 +12,5 @@ public interface RegistrationService {
 
     List<Registration> getAll();
 
-    List<RegistrationReportDto> getAllReports();
+    List<RegistrationReportDto> getGeneralReport();
 }

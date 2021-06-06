@@ -40,7 +40,7 @@ public class RegistrationServiceImpl implements RegistrationService {
     }
 
     @Override
-    public List<RegistrationReportDto> getAllReports() {
-        return registrationRepository.findAllReports();
+    public List<RegistrationReportDto> getGeneralReport() {
+        return registrationRepository.getGeneralReport();
     }
 }
