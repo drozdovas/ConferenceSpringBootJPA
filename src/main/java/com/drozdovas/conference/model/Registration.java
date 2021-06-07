@@ -10,11 +10,9 @@ import java.util.List;
 @Entity
 @Table(name = "CONF_REGISTRATIONS")
 @NamedQueries({
-        @NamedQuery(name = Registration.GENERAL_REPORT, query = Registration.GENERAL_REPORT_JPQL)
+        @NamedQuery(name = "Registration.getGeneralReport", query = Registration.GENERAL_REPORT_JPQL)
 })
 public class Registration {
-
-    public static final String GENERAL_REPORT = "Registration.generalReport";
 
     public static final String GENERAL_REPORT_JPQL =
             "Select new com.drozdovas.conference.dto.RegistrationReportDto(r.name, c.name, c.description) " +
